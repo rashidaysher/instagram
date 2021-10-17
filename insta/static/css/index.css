@@ -3,3 +3,26 @@
     padding: 0;
     
 }
+
+/* bio section */
+.bio-image{
+
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+.bio-image img{
+    border-radius: 50%;
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.bio-name{
+    margin-top: 28px;
+}
+
+.comment-icons
+{
+display: flex;
+flex-direction:row;
+}
