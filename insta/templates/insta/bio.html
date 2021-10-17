@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{{ bio.user.first_name }} {{ bio.user.last_name }} (@{{ profile.user.username }} ){% endblock %}
+{% block title %}{{ bio.user.first_name }} {{ bio.user.last_name }} (@{{ bio.user.username }} ){% endblock %}
 {% block content %}
 {% load static %}
 
@@ -12,9 +12,9 @@
   {% include "insta/navbar.html" %}
 
   <div class ="profile-section">
-    <div class="profile-image">
+    <div class="bio-image">
       {% if not bio.dp %}
-          <img class="rounded-circle my-avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ profile.user.username }}" data-holder-rendered="true">
+          <img class="rounded-circle my-avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ bio.user.username }}" data-holder-rendered="true">
         {% else %}
           <img class="rounded-circle my-avatar" src="{{bio.dp.url }}" alt="{{ bio.user.username }}"  data-holder-rendered="true">
         {% endif %}
@@ -22,7 +22,7 @@
     <div class="bio-bio-section">
       <div class="bio-details">
           <div class="bio-name">
-            <h2 class="bio-name">{{ profile.user.username }}</h2>
+            <h2 class="bio-name">{{ bio.user.username }}</h2>
           </div>
           <div style="padding-top: 8%;" class="Edit-profile">
             <a  class="Edit-profile-text" href="/edit/{{bio.user.username}}">Edit Profile</a>

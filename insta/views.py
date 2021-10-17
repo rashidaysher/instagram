@@ -1,5 +1,4 @@
-from typing import BinaryIO
-from django import template
+
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.template import loader, Context
