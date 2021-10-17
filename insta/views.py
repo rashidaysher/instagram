@@ -39,3 +39,17 @@ def signup(request):
     pass
 
 
+def user_bio(request, username):
+    template = loader.get_template('insta/bio.html')
+    profile = Bio.objects.get(user=request.user)
+    posts = Post.objects.filter(author__user__username=request.user.username)
+    context = {'bio': profile, 'posts': posts}
+    return HttpResponse(template.render(context, request))
+
+def top_comment(request):
+    if request.POST:
+        description, id = request.POST['description'], request.POST['demo']
+        post = Post.objects.get(pk=id)
+        if description is not None:
+            Comment.objects.create(post_linked=post, description=description, user=request.user)
+            return redirect(reverse('index'))
