@@ -42,7 +42,7 @@
       </div>
       <div class="profile-bio">
         <p>{{ bio.user.first_name }} {{ bio.user.last_name }}</p>
-        {% for bio in profile.split_biography %}
+        {% for bio in bio.split_bio %}
           <p>{{ bio }}</p>
 
         {% endfor %}
@@ -57,7 +57,7 @@
           <p><i class="fas fa-th "></i>&nbsp;POSTS</p>
       </div>
       <div class="igtv-icon">
-          <p><i class="fas fa-tv"></i>&nbsp;IGTV</p>
+          <p><i class="fas fa-tv"></i>&nbsp;REELS</p>
       </div>
       <div class="saved-icon">
           <p><i class="far fa-bookmark"></i>&nbsp;SAVED</p>
