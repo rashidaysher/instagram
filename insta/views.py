@@ -71,7 +71,7 @@ def likes_post(request, postid):
 
 def add_post(request):
     template = loader.get_template('insta/post.html')
-    Bio = Bio.objects.get(user=request.user)
+    bio = Bio.objects.get(user=request.user)
     if request.method == "POST":
         bio = Bio.objects.get(user=request.user)
         form = PostForm(request.POST, request.FILES)
@@ -107,4 +107,13 @@ def edit_profile(request, username):
             bio.save()
             return redirect(reverse('index'))
     else:
+
+        form = BioForm(initial={'username': username,
+                                    'first_name': user.first_name,
+                                    'last_name': user.last_name,
+                                    'phone': bio.phone,
+                                    'bio': bio.bio})
+
+    context = {'form': form, 'user': user, 'bio':bio}
+    return HttpResponse(template.render(context, request))
 
