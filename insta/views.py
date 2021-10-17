@@ -41,9 +41,9 @@ def signup(request):
 
 def user_bio(request, username):
     template = loader.get_template('insta/bio.html')
-    profile = Bio.objects.get(user=request.user)
+    bio = Bio.objects.get(user=request.user)
     posts = Post.objects.filter(author__user__username=request.user.username)
-    context = {'bio': profile, 'posts': posts}
+    context = {'bio': bio, 'posts': posts}
     return HttpResponse(template.render(context, request))
 
 def top_comment(request):
