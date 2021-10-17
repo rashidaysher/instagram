@@ -18,7 +18,7 @@ from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import static
 import os
-
+from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
