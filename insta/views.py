@@ -92,7 +92,7 @@ def add_post(request):
 def edit_profile(request, username):
     template = loader.get_template('insta/edit_profile.html')
     user = User.objects.get(username=request.user.username)
-    BinaryIO = Bio.objects.get(user=request.user)  
+    bio = Bio.objects.get(user=request.user)  
 
     if request.method == 'POST':
         form = BioForm(request.POST, request.FILES)
@@ -101,10 +101,10 @@ def edit_profile(request, username):
             user.username = form.cleaned_data['username']
             user.first_name = form.cleaned_data['first_name']
             user.save()
-            Bio.bio = form.cleaned_data['bio']
-            Bio.dp = form.cleaned_data['dp']
-            Bio.phone = form.cleaned_data['phone']
-            Bio.save()
+            bio.bio = form.cleaned_data['bio']
+            bio.dp = form.cleaned_data['dp']
+            bio.phone = form.cleaned_data['phone']
+            bio.save()
             return redirect(reverse('index'))
     else:
 
