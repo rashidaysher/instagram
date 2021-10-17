@@ -1,3 +1,4 @@
+from typing import BinaryIO
 from django import template
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -86,4 +87,10 @@ def add_post(request):
 
     context = {'form': form ,'bio':bio}
     return HttpResponse(template.render(context, request))
+
+
+def edit_profile(request, username):
+    template = loader.get_template('insta/edit_profile.html')
+    user = User.objects.get(username=request.user.username)
+    BinaryIO = Bio.objects.get(user=request.user)    
 
