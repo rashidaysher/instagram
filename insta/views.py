@@ -84,6 +84,6 @@ def add_post(request):
         form = PostForm()
         pass
 
-    context = {'form': form ,'profile':profile}
+    context = {'form': form ,'bio':bio}
     return HttpResponse(template.render(context, request))
 
