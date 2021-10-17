@@ -22,7 +22,7 @@ def index(request):
     posts = Post.objects.all()
     bios = Bio.objects.get(user=request.user)
     comments = Comment.objects.all()
-    context = {'posts': posts, 'profile': bios, 'comments': comments}
+    context = {'posts': posts, 'Bio': bios, 'comments': comments}
     return HttpResponse(template.render(context, request))
 
 def login_user(request):
@@ -71,7 +71,7 @@ def likes_post(request, postid):
 
 def add_post(request):
     template = loader.get_template('insta/post.html')
-    profile = Bio.objects.get(user=request.user)
+    Bio = Bio.objects.get(user=request.user)
     if request.method == "POST":
         bio = Bio.objects.get(user=request.user)
         form = PostForm(request.POST, request.FILES)
@@ -97,4 +97,14 @@ def edit_profile(request, username):
     if request.method == 'POST':
         form = BioForm(request.POST, request.FILES)
         if form.is_valid():  
+
+            user.username = form.cleaned_data['username']
+            user.first_name = form.cleaned_data['first_name']
+            user.save()
+            Bio.bio = form.cleaned_data['biography']
+            Bio.dp = form.cleaned_data['dp']
+            Bio.phone = form.cleaned_data['phone_number']
+            Bio.save()
+            return redirect(reverse('home'))
+    else:
 
