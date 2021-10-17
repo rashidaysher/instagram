@@ -101,10 +101,10 @@ def edit_profile(request, username):
             user.username = form.cleaned_data['username']
             user.first_name = form.cleaned_data['first_name']
             user.save()
-            Bio.bio = form.cleaned_data['biography']
+            Bio.bio = form.cleaned_data['bio']
             Bio.dp = form.cleaned_data['dp']
-            Bio.phone = form.cleaned_data['phone_number']
+            Bio.phone = form.cleaned_data['phone']
             Bio.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('index'))
     else:
 
