@@ -21,8 +21,15 @@
     margin-top: 28px;
 }
 
+
+/* comment section */
 .comment-icons
 {
 display: flex;
 flex-direction:row;
+}
+
+.comment-input{
+    width:607px;
+    height: 60px;
 }
