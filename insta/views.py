@@ -92,5 +92,9 @@ def add_post(request):
 def edit_profile(request, username):
     template = loader.get_template('insta/edit_profile.html')
     user = User.objects.get(username=request.user.username)
-    BinaryIO = Bio.objects.get(user=request.user)    
+    BinaryIO = Bio.objects.get(user=request.user)  
+
+    if request.method == 'POST':
+        form = BioForm(request.POST, request.FILES)
+        if form.is_valid():  
 
