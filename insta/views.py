@@ -53,3 +53,37 @@ def top_comment(request):
         if description is not None:
             Comment.objects.create(post_linked=post, description=description, user=request.user)
             return redirect(reverse('index'))
+
+def likes_post(request, postid):
+    post = Post.objects.get(id=postid)
+    try:
+        is_Liked = Likes.objects.get(post_linked=post, user__username=request.user.username)
+        Likes.objects.filter(post_linked=post, user__username=request.user.username).delete()
+        post.likes -= 1
+    except Likes.DoesNotExist:
+
+        Likes.objects.create(post_linked=post, user=request.user)
+        post.likes += 1
+    post.save()
+    return redirect(reverse('index'))
+
+
+def add_post(request):
+    template = loader.get_template('insta/post.html')
+    profile = Bio.objects.get(user=request.user)
+    if request.method == "POST":
+        bio = Bio.objects.get(user=request.user)
+        form = PostForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            fs = form.save(commit=False)
+            fs.author = bio
+            fs.save()
+            return redirect(reverse('index'))
+    else:
+        form = PostForm()
+        pass
+
+    context = {'form': form ,'profile':profile}
+    return HttpResponse(template.render(context, request))
+
