@@ -4,6 +4,52 @@
     
 }
 
+
+body{
+    background: #f3f1f1d9
+    }
+
+
+
+    /* post section */
+
+
+    .posts-list{
+
+        margin-top:170px;
+    }
+    
+    .post{
+        margin-top: auto;
+        width: 614px;
+        border: 1px solid #ccc;
+        padding: 0.5px;
+        background-color: white;
+        margin-left: 13%;
+        margin-bottom: 25px;
+       /* height: 814px; */
+    }
+    
+    .divider{
+        width: 100%;
+        color: gray;
+        /* size: 1px; */
+        border-width: 0.1px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0.5px;
+        height:0.1px;
+        margin-bottom: 0px;
+    
+    }
+    
+    .post-header {
+        display: flex;
+        flex-direction: row;
+        /*padding-left: 20px;
+        padding-top: 10px; */
+    }
+
 /* bio section */
 .bio-image{
 
@@ -32,4 +78,18 @@ flex-direction:row;
 .comment-input{
     width:607px;
     height: 60px;
+}
+
+.description-input{
+    height: 40px;
+    width: 87%;
+    border: 1px solid rgba(var(--ce3,239,239,239),1);
+}
+
+.comment-post{
+    width: 11%;
+    height: 44px;
+    border: 1px solid rgba(var(--ce3,239,239,239),1);
+    background: white;
+    color: #4ea8f7;
 }
