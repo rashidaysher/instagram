@@ -108,10 +108,10 @@ def edit_profile(request, username):
     else:
 
         form = BioForm(initial={'username': username,
-                                    'first_name': user.first_name,
-                                    'last_name': user.last_name,
-                                    'phone': bio.phone,
-                                    'bio': bio.bio})
+                                'first_name': user.first_name,
+                                'last_name': user.last_name,
+                                'phone': bio.phone,
+                                'bio': bio.bio})
 
     context = {'form': form, 'user': user, 'bio':bio}
     return HttpResponse(template.render(context, request))

@@ -22,10 +22,10 @@
       <div class="heart">
         <a href="#"><i class="fa fa-compass fa-inverse" style="font-size:25px;color:black;"></i></a>
       </div>
-      <div class="heart">
+      <!-- <div class="heart">
         <a href="#"><i class="far fa-heart" style="font-size:25px;color:black;"></i></a>
-      </div>
-      <div>
+      </div> -->
+      <div class="moon" id="moon">
        
         <button onclick="darkMode()"><i class="fas fa-moon"></i></button>
         <button onclick="lightMode()"><i class="far fa-moon"></i></button>
@@ -35,13 +35,13 @@
 
     <div class="dropdown nav-bio-image">
             {% if not bio.dp %}
-              <a href="/user/{{ bio.user.username }}"><img class="rounded-circle avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ bio.user.username }}" data-holder-rendered="true"></a>
+              <a href="/user/{{ bio.user.username }}"><img class="rounded-circle avatar"  src="{% static 'img/avatar-2.png' %}"  alt="{{ bio.user.username }}" data-holder-rendered="true"></a>
             {% else %}
               <a href="/user/{{ bio.user.username }}" ><img class="rounded-circle avatar" src="{{ bio.dp.url }}" alt="{{ bio.user.username }}"  data-holder-rendered="true"></a>
             {% endif %}
 
           <div class="dropdown-content">
-            <a href="/edit/user/{{ user.username }}">My profile</a>
+            <a href="/edit/user/{{user.username }}">My profile</a>
             <a href="/create/post">+ Post</a>
             <a href="{% url 'logout' %}">Log out</a>
           </div>
