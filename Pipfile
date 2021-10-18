@@ -9,6 +9,8 @@ pillow = "*"
 psycopg2-binary = "*"
 django-crispy-forms = "*"
 django-bootstrap-v5 = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 

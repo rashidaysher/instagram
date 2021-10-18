@@ -14,7 +14,7 @@
   <div class ="profile-section">
     <div class="bio-image">
       {% if not bio.dp %}
-          <img class="rounded-circle my-avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ bio.user.username }}" data-holder-rendered="true" >
+          <img class="rounded-circle my-avatar"  src="{% static 'img/avatar-2.png' %}"  alt="{{ bio.user.username }}" data-holder-rendered="true" >
         {% else %}
           <img class="rounded-circle my-avatar" src="{{bio.dp.url }}" alt="{{ bio.user.username }}"  data-holder-rendered="true">
         {% endif %}

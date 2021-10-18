@@ -15,9 +15,8 @@
 
 <form action="/edit/{{ user.username }}" enctype="multipart/form-data" method="post">
     {% csrf_token %}
-<!--    <img src="/media/{{ form.profile_pic.value}}">-->
     <div class="edit-header">
-      <img src="https://i.imgur.com/zqpwkLQ.png" />
+      <img src="../../static/img/insta.jpg" />
     </div>
     {{ form|crispy }}
 
