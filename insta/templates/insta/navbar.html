@@ -25,6 +25,11 @@
       <div class="heart">
         <a href="#"><i class="far fa-heart" style="font-size:25px;color:black;"></i></a>
       </div>
+      <div>
+       
+        <button onclick="darkMode()"><i class="fas fa-moon"></i></button>
+        <button onclick="lightMode()"><i class="far fa-moon"></i></button>
+      </div>
 
 
 
@@ -36,7 +41,7 @@
             {% endif %}
 
           <div class="dropdown-content">
-            <a href="/user/{{ bio.user.username }}">My profile</a>
+            <a href="/edit/user/{{ user.username }}">My profile</a>
             <a href="/create/post">+ Post</a>
             <a href="{% url 'logout' %}">Log out</a>
           </div>
@@ -47,3 +52,18 @@
 
     </div>
   </div>
+
+  <script>
+    function darkMode() {
+      var element = document.body;
+      var content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+    }
+    function lightMode() {
+      var element = document.body;
+      var content = document.getElementById("DarkModetext");
+      element.className = "light-mode";
+      content.innerText = "Dark Mode is OFF";
+    }
+  </script>

@@ -6,10 +6,18 @@
 
 
 body{
-    background: #f3f1f1d9
+    background: #f3f1f1d9;
+    color: black;
     }
 
-
+    .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      .light-mode {
+        background-color: white;
+        color: black;
+      }
 
     /* post section */
 

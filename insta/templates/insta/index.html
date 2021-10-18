@@ -16,13 +16,13 @@
     <div class="post-header">
       <div class="bio-image">
         {% if not post.author.dp %}
-          <a href="/user/{{ post.author.user.username }}"><img class="rounded-circle avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ post.author.user.username }}" data-holder-rendered="true"></a>
+          <a href="/user/{{ post.user.user.username }}"><img class="rounded-circle avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ post.author.user.username }}" data-holder-rendered="true"></a>
         {% else %}
-         <a href="/user/{{ post.author.user.username }}"><img class="rounded-circle avatar"  src="{{ post.author.dp.url }}"  alt="{{ post.author.user.username }}" data-holder-rendered="true"></a>
+         <a href="/user/{{ post.user.user.username }}"><img class="rounded-circle avatar"  src="{{ post.author.dp.url }}"  alt="{{ post.author.user.username }}" data-holder-rendered="true"></a>
         {% endif %}
       </div>
       <div class="profile-name">
-        <a class="bio-link" href="/user/{{ post.author.user.username }}">{{ post.author.user.username }} </a>
+        <a class="bio-link" href="/user/{{ post.user.user.username }}">{{ post.author.user.username }} </a>
       </div>
       <div class="location">
 <!--        {{ post.location }}-->
@@ -69,9 +69,10 @@
                 <input class="post-input" type="hidden" name="demo" value="{{ post.id }}"/>
                 <input class="comment-post" type="submit" value="Post" />
         </form>
-
+   
 
       </div>
+     
     </div>
     </div>
 
@@ -80,9 +81,10 @@
 
 
   </div>
+  
 
 {% else %}
-  <p>You are not logged into</p>
+  <p>Kindly log in to use the app</p>
   <a href="{% url 'login' %}">Log In</a>
 {% endif %}
 {% endblock %}
