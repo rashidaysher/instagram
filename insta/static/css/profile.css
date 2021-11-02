@@ -1,10 +1,10 @@
 body{
-    background: #fafafa;
+    background: black;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     }
     
     
-    .bio-section{
+    .profile-section{
         display: flex;
         flex-direction: row;
         margin-top: 8%;
@@ -16,7 +16,7 @@ body{
         width:180px;
     }
     
-    .bio-details{
+    .profile-details{
         padding-left:30px;
         width: 500px;
         display:flex;
@@ -25,17 +25,17 @@ body{
         line-height: 5px;
     }
     
-    .bio-name{
+    .profile-name{
         font-size: 28px;
         font-weight: 300;
     }
     
-    .bio-details > div {
+    .profile-details > div {
         padding: 10px;
         flex-basis: 25%
     }
     
-    .bio-bio{
+    .profile-bio{
         padding-left:38px;
         line-height: 6px;
     }

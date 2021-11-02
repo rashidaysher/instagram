@@ -8,19 +8,17 @@
 
 {% load crispy_forms_tags %}
 
-{% include 'insta/navbar.html' %}
+{% include 'insta/nav.html' %}
 
 <div class="form-container">
 
 
 <form action="/edit/{{ user.username }}" enctype="multipart/form-data" method="post">
-    {% csrf_token %}
+    {% csrf_token %}  
     <div class="edit-header">
-      <img src="../../static/img/insta.jpg" />
+      <img src="https://i.imgur.com/zqpwkLQ.png" />
     </div>
     {{ form|crispy }}
-
-
     <button type="submit" class="btn btn-success">Save</button>
 </form>
 </div>

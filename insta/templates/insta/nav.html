@@ -1,0 +1,43 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<div class="header">
+
+    <div class="insta-logo">
+    
+    <a href="/"><img src="https://i.imgur.com/zqpwkLQ.png" /></a>
+    </div>
+
+    <div class=""style="margin-top:1%; margin-left:4%" >
+      <form class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search' %}" >
+        <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
+      </form>
+
+    </div>
+    
+    <div class="icons-data">
+
+      <div class="home">
+        <a href="/"><i class="fa fa-home fa-inverse" style="font-size:25px;color:black;"></i></a>
+      </div>
+      <div class="messenger">
+      </div>
+      <div class="heart">
+      </div>
+    
+    <div class="dropdown nav-profile-image">
+            {% if not profile.profile_pic %}
+              <a href="/user/{{ profile.user.username }}"><img class="rounded-circle avatar"  src="{% static 'img/avatar-2.jpg' %}"  alt="{{ profile.user.username }}" data-holder-rendered="true"></a>
+            {% else %}
+              <a href="/user/{{ profile.user.username }}" ><img class="rounded-circle avatar" src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}"  data-holder-rendered="true"></a>
+            {% endif %}
+
+          <div class="dropdown-content">
+            <a href="/user/{{ profile.user.username }}">My profile</a>
+            <a href="/create/post">Add Post</a>
+            <a href="{% url 'logout' %}">Log out</a>
+          </div>
+    </div>
+
+
+    </div>
+  </div>

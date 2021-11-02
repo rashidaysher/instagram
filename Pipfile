@@ -11,6 +11,7 @@ django-crispy-forms = "*"
 django-bootstrap-v5 = "*"
 gunicorn = "*"
 django-heroku = "*"
+cloudinary = "*"
 
 [dev-packages]
 

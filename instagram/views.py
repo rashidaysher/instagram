@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import SignUpForm
-from insta.models import Bio
+from insta.models import Profile
 
 def signup(request):
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def signup(request):
                                             first_name=first_name,
                                             last_name=last_name,
                                             email=email)
-            bio= Bio.objects.create(user=user)
+            profile = Profile.objects.create(user=user)
 
             return HttpResponseRedirect('/accounts/login')
 
